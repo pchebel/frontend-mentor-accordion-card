@@ -1,6 +1,88 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
-body {
-  font-family: "Kumbh Sans", sans-serif;
+:root {
   font-size: 12px;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
+  background: linear-gradient(#af67e9, #6565e7);
+  color: #fff;
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.cardWrapper {
+  width: 45.09804rem;
+  height: 25rem;
+  background-color: #fff;
+  border-radius: 15px;
+  color: #1d1e35;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0 1.2em 12px #0004;
+          box-shadow: 0 1.2em 12px #0004;
+}
+
+.cardWrapper .illustration {
+  height: 100%;
+  width: 22.54902rem;
+  background-color: red;
+}
+
+.cardWrapper .faq {
+  height: 100%;
+  width: 22.54902rem;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.cardWrapper .faq .questionsContainer details.answer {
+  color: #787887;
+  font-size: 0.65rem;
+  width: 28em;
+  margin: 1.2em 0;
+}
+
+.cardWrapper .faq .questionsContainer details.answer summary.question {
+  margin-bottom: 0.8em;
+  position: relative;
+  font-size: 0.75rem;
+  color: #4a4b5e;
+  list-style: none;
+}
+
+.cardWrapper .faq .questionsContainer details.answer summary.question::-webkit-details-marker {
+  display: none;
+}
+
+.cardWrapper .faq .questionsContainer details.answer summary.question::after {
+  position: absolute;
+  right: 0px;
+  content: url("./images/icon-arrow-down.svg");
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.cardWrapper .faq .questionsContainer details.answer[open] summary.question {
+  font-weight: bold;
+}
+
+.cardWrapper .faq .questionsContainer details.answer[open] summary.question::after {
+  -webkit-transform: rotate(180deg) scale(0.6);
+          transform: rotate(180deg) scale(0.6);
+}
+
+.cardWrapper .faq .questionsContainer hr {
+  border: 0.2px solid #e7e7e9;
 }
 /*# sourceMappingURL=style.css.map */
