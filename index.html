@@ -28,7 +28,11 @@
   </head>
   <body>
     <div class="cardWrapper">
-      <div class="illustration"></div>
+      <div class="illustration">
+        <div class="decoration"></div>
+        <div class="girl"></div>
+        <div class="box"></div>
+      </div>
       <div class="faq">
         <div class="questionsContainer">
           <h2 class="title">FAQ</h2>
@@ -36,37 +40,39 @@
             <summary class="question">
               How many team members can I invite?
             </summary>
+            <p>
             You can invite up to 2 additional users on the Free plan. There is
-            no limit on team members for the Premium plan.
+            no limit on team members for the Premium plan.</p>
           </details>
           <hr />
           <details class="answer">
             <summary class="question">
               What is the maximum file upload size?
             </summary>
+            <p>
             No more than 2GB. All files in your account must fit your allotted
-            storage space.
+            storage space.</p>
           </details>
           <hr />
           <details class="answer">
             <summary class="question">How do I reset my password?</summary>
-            Click “Forgot password” from the login page or “Change password”
-            from your profile page. A reset link will be emailed to you.
+            <p></p>Click “Forgot password” from the login page or “Change password”
+            from your profile page. A reset link will be emailed to you.</p>
           </details>
           <hr />
 
           <details class="answer">
             <summary class="question">Can I cancel my subscription?</summary>
-            Yes! Send us a message and we’ll process your request no questions
-            asked.
+            <p>Yes! Send us a message and we’ll process your request no questions
+            asked.</p>
           </details>
           <hr />
           <details class="answer">
             <summary class="question">
               Do you provide additional support?
             </summary>
-            Chat and email support is available 24/7. Phone lines are open
-            during normal business hours.
+          <p>Chat and email support is available 24/7. Phone lines are open
+            during normal business hours.</p>
           </details>
           <hr />
         </div>
@@ -79,5 +85,13 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Pierrick</a>.
     </div>
+
+    <script>
+      const answerElements = document.querySelectorAll(".answer");
+      answerElements.forEach((i) => {
+        i.ontoggle = () =>
+          i.open && answerElements.forEach((j) => (j.open = j == i));
+      });
+    </script>
   </body>
 </html>

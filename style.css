@@ -28,9 +28,65 @@ body {
 }
 
 .cardWrapper .illustration {
+  position: relative;
+  width: 22.54902rem;
+  height: 100%;
+}
+
+.cardWrapper .illustration .decoration {
   height: 100%;
   width: 22.54902rem;
-  background-color: red;
+  position: absolute;
+  background-image: url("./images/bg-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: 210%;
+  background-position: -29em -14em;
+  overflow: hidden;
+}
+
+.cardWrapper .illustration .girl {
+  height: 100%;
+  width: 22.54902rem;
+  position: absolute;
+  background-image: url("./images/illustration-woman-online-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: 95%;
+  background-position: -3.5em 4.5em;
+}
+
+.cardWrapper .illustration .box {
+  height: 100%;
+  width: 22.54902rem;
+  position: absolute;
+  background-image: url("./images/illustration-box-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: 45%;
+  -webkit-transform: translate(-5em, 10em);
+          transform: translate(-5em, 10em);
+  -webkit-animation: levitation 2s ease-in-out infinite alternate;
+          animation: levitation 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes levitation {
+  0% {
+    -webkit-transform: translate(-5em, 10em);
+            transform: translate(-5em, 10em);
+  }
+  100% {
+    -webkit-transform: translate(-5em, 9.5em);
+            transform: translate(-5em, 9.5em);
+  }
+}
+
+@keyframes levitation {
+  0% {
+    -webkit-transform: translate(-5em, 10em);
+            transform: translate(-5em, 10em);
+  }
+  100% {
+    -webkit-transform: translate(-5em, 9.5em);
+            transform: translate(-5em, 9.5em);
+  }
 }
 
 .cardWrapper .faq {

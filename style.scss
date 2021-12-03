@@ -4,6 +4,9 @@
 $width-desktop: 1440px;
 $width-mobile: 375px;
 $font-size: 12px;
+$grey-decoration: "./images/bg-pattern-desktop.svg";
+$girl-illustration: "./images/illustration-woman-online-desktop.svg";
+$box-illustration: "./images/illustration-box-desktop.svg";
 
 :root {
   font-size: $font-size;
@@ -32,10 +35,50 @@ $cardWidth: $cardHeight * $ratio;
   box-shadow: 0 1.2em 12px #0004;
 
   .illustration {
-    height: 100%;
+    position: relative;
     width: $cardWidth/2;
+    height: 100%;
 
-    background-color: red;
+    .decoration {
+      height: 100%;
+      width: $cardWidth/2;
+      position: absolute;
+      background-image: url($grey-decoration);
+      background-repeat: no-repeat;
+      background-size: 210%;
+      background-position: -29em -14em;
+      overflow: hidden;
+    }
+
+    .girl {
+      height: 100%;
+      width: $cardWidth/2;
+      position: absolute;
+      background-image: url($girl-illustration);
+      background-repeat: no-repeat;
+      background-size: 95%;
+      background-position: -3.5em 4.5em;
+    }
+
+    .box {
+      height: 100%;
+      width: $cardWidth/2;
+      position: absolute;
+      background-image: url($box-illustration);
+      background-repeat: no-repeat;
+      background-size: 45%;
+      transform: translate(-5em, 10em);
+      animation: levitation 2s ease-in-out infinite alternate;
+
+      @keyframes levitation {
+        0% {
+          transform: translate(-5em, 10em);
+        }
+        100% {
+          transform: translate(-5em, 9.5em);
+        }
+      }
+    }
   }
 
   .faq {
