@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAAA,OAAO,CAAC,oFAAI;AAOZ,AAAA,IAAI,CAAC;EACH,WAAW,EAAE,wBAAwB;EACrC,SAAS,EAJC,IAAI;CAKf",
+    "sources": [
+        "style.scss",
+        "_colors.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}

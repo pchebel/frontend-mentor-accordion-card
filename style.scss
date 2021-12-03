@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+@import "colors";
+
+$width-desktop: 1440px;
+$width-mobile: 375px;
+$font-size: 12px;
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: $font-size;
+}
