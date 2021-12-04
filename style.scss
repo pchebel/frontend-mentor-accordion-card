@@ -141,9 +141,13 @@ $cardWidth: $cardHeight * $ratio;
 }
 
 @media screen and (max-width: 700px) {
+  .illustrationOverflow {
+    height: 6rem;
+  }
+
   .cardWrapper {
     width: 17rem;
-    height: 27rem;
+    height: 26rem;
     flex-direction: column;
 
     .illustration {
