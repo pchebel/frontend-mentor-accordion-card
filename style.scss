@@ -3,10 +3,11 @@
 
 $width-desktop: 1440px;
 $width-mobile: 375px;
-$font-size: 12px;
+$font-size: 20px;
 $grey-decoration: "./images/bg-pattern-desktop.svg";
 $girl-illustration: "./images/illustration-woman-online-desktop.svg";
 $box-illustration: "./images/illustration-box-desktop.svg";
+$girl-mobile: "./images/illustration-woman-online-mobile.svg";
 
 :root {
   font-size: $font-size;
@@ -28,11 +29,16 @@ $cardWidth: $cardHeight * $ratio;
 .cardWrapper {
   width: $cardWidth;
   height: $cardHeight;
+
   background-color: #fff;
   border-radius: 15px;
   color: $desat-blue-txt;
   display: flex;
-  box-shadow: 0 1.2em 12px #0004;
+  box-shadow: 0 1.2rem 12px #0004;
+
+  transition-property: width, height;
+  transition-duration: 0.8s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 
   .illustration {
     position: relative;
@@ -46,7 +52,7 @@ $cardWidth: $cardHeight * $ratio;
       background-image: url($grey-decoration);
       background-repeat: no-repeat;
       background-size: 210%;
-      background-position: -29em -14em;
+      background-position: -29rem -14rem;
       overflow: hidden;
     }
 
@@ -57,7 +63,7 @@ $cardWidth: $cardHeight * $ratio;
       background-image: url($girl-illustration);
       background-repeat: no-repeat;
       background-size: 95%;
-      background-position: -3.5em 4.5em;
+      background-position: -3.5rem 4.5rem;
     }
 
     .box {
@@ -67,15 +73,15 @@ $cardWidth: $cardHeight * $ratio;
       background-image: url($box-illustration);
       background-repeat: no-repeat;
       background-size: 45%;
-      transform: translate(-5em, 10em);
+      transform: translate(-5rem, 10rem);
       animation: levitation 2s ease-in-out infinite alternate;
 
       @keyframes levitation {
         0% {
-          transform: translate(-5em, 10em);
+          transform: translate(-5rem, 10rem);
         }
         100% {
-          transform: translate(-5em, 9.5em);
+          transform: translate(-5rem, 9.5rem);
         }
       }
     }
@@ -89,6 +95,9 @@ $cardWidth: $cardHeight * $ratio;
     justify-content: start;
 
     .questionsContainer {
+      .title {
+        text-align: start;
+      }
       details.answer {
         color: $dark-gray-blue-txt;
         font-size: 0.65rem;
@@ -110,7 +119,7 @@ $cardWidth: $cardHeight * $ratio;
             position: absolute;
             right: 0px;
             content: url("./images/icon-arrow-down.svg");
-            transform: scale(0.6);
+            transform: scale(0.8);
             transform-origin: center;
           }
         }
@@ -120,12 +129,74 @@ $cardWidth: $cardHeight * $ratio;
         font-weight: bold;
 
         &::after {
-          transform: rotate(180deg) scale(0.6);
+          transform: rotate(180deg) scale(0.8);
         }
       }
 
       hr {
         border: 0.2px solid $lt-gray-blue-div;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cardWrapper {
+    width: 17rem;
+    height: 27rem;
+    flex-direction: column;
+
+    .illustration {
+      height: 8rem;
+      width: 100%;
+
+      .decoration,
+      .girl,
+      .box {
+        display: none;
+      }
+
+      .girlMobile {
+        height: 17em;
+        width: 17em;
+        position: absolute;
+        background-image: url($girl-mobile);
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: center;
+        transform: translate(0%, -55%);
+      }
+
+      .girlMobileShadow {
+        height: 17em;
+        width: 17em;
+        position: absolute;
+        background-color: hsl(240, 100%, 97%);
+        mask-image: url($girl-mobile);
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: 80%;
+        transform: translate(0%, -45%);
+      }
+    }
+
+    .faq {
+      height: 100%;
+      width: 17rem;
+      display: grid;
+      place-items: center;
+      justify-content: center;
+      align-items: start;
+      .questionsContainer {
+        .title {
+          text-align: center;
+        }
+        details.answer {
+          color: $dark-gray-blue-txt;
+          font-size: 0.65rem;
+          width: 15rem;
+          margin: 1.2em 0;
+        }
       }
     }
   }

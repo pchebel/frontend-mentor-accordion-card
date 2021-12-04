@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 :root {
-  font-size: 12px;
+  font-size: 20px;
 }
 
 body {
@@ -23,8 +23,14 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-shadow: 0 1.2em 12px #0004;
-          box-shadow: 0 1.2em 12px #0004;
+  -webkit-box-shadow: 0 1.2rem 12px #0004;
+          box-shadow: 0 1.2rem 12px #0004;
+  -webkit-transition-property: width, height;
+  transition-property: width, height;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+          transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .cardWrapper .illustration {
@@ -40,7 +46,7 @@ body {
   background-image: url("./images/bg-pattern-desktop.svg");
   background-repeat: no-repeat;
   background-size: 210%;
-  background-position: -29em -14em;
+  background-position: -29rem -14rem;
   overflow: hidden;
 }
 
@@ -51,7 +57,7 @@ body {
   background-image: url("./images/illustration-woman-online-desktop.svg");
   background-repeat: no-repeat;
   background-size: 95%;
-  background-position: -3.5em 4.5em;
+  background-position: -3.5rem 4.5rem;
 }
 
 .cardWrapper .illustration .box {
@@ -61,31 +67,31 @@ body {
   background-image: url("./images/illustration-box-desktop.svg");
   background-repeat: no-repeat;
   background-size: 45%;
-  -webkit-transform: translate(-5em, 10em);
-          transform: translate(-5em, 10em);
+  -webkit-transform: translate(-5rem, 10rem);
+          transform: translate(-5rem, 10rem);
   -webkit-animation: levitation 2s ease-in-out infinite alternate;
           animation: levitation 2s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes levitation {
   0% {
-    -webkit-transform: translate(-5em, 10em);
-            transform: translate(-5em, 10em);
+    -webkit-transform: translate(-5rem, 10rem);
+            transform: translate(-5rem, 10rem);
   }
   100% {
-    -webkit-transform: translate(-5em, 9.5em);
-            transform: translate(-5em, 9.5em);
+    -webkit-transform: translate(-5rem, 9.5rem);
+            transform: translate(-5rem, 9.5rem);
   }
 }
 
 @keyframes levitation {
   0% {
-    -webkit-transform: translate(-5em, 10em);
-            transform: translate(-5em, 10em);
+    -webkit-transform: translate(-5rem, 10rem);
+            transform: translate(-5rem, 10rem);
   }
   100% {
-    -webkit-transform: translate(-5em, 9.5em);
-            transform: translate(-5em, 9.5em);
+    -webkit-transform: translate(-5rem, 9.5rem);
+            transform: translate(-5rem, 9.5rem);
   }
 }
 
@@ -98,6 +104,10 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
+}
+
+.cardWrapper .faq .questionsContainer .title {
+  text-align: start;
 }
 
 .cardWrapper .faq .questionsContainer details.answer {
@@ -123,8 +133,8 @@ body {
   position: absolute;
   right: 0px;
   content: url("./images/icon-arrow-down.svg");
-  -webkit-transform: scale(0.6);
-          transform: scale(0.6);
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
   -webkit-transform-origin: center;
           transform-origin: center;
 }
@@ -134,11 +144,80 @@ body {
 }
 
 .cardWrapper .faq .questionsContainer details.answer[open] summary.question::after {
-  -webkit-transform: rotate(180deg) scale(0.6);
-          transform: rotate(180deg) scale(0.6);
+  -webkit-transform: rotate(180deg) scale(0.8);
+          transform: rotate(180deg) scale(0.8);
 }
 
 .cardWrapper .faq .questionsContainer hr {
   border: 0.2px solid #e7e7e9;
+}
+
+@media screen and (max-width: 700px) {
+  .cardWrapper {
+    width: 17rem;
+    height: 27rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .cardWrapper .illustration {
+    height: 8rem;
+    width: 100%;
+  }
+  .cardWrapper .illustration .decoration,
+  .cardWrapper .illustration .girl,
+  .cardWrapper .illustration .box {
+    display: none;
+  }
+  .cardWrapper .illustration .girlMobile {
+    height: 17em;
+    width: 17em;
+    position: absolute;
+    background-image: url("./images/illustration-woman-online-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    -webkit-transform: translate(0%, -55%);
+            transform: translate(0%, -55%);
+  }
+  .cardWrapper .illustration .girlMobileShadow {
+    height: 17em;
+    width: 17em;
+    position: absolute;
+    background-color: #f0f0ff;
+    -webkit-mask-image: url("./images/illustration-woman-online-mobile.svg");
+            mask-image: url("./images/illustration-woman-online-mobile.svg");
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+            mask-position: center;
+    -webkit-mask-size: 80%;
+            mask-size: 80%;
+    -webkit-transform: translate(0%, -45%);
+            transform: translate(0%, -45%);
+  }
+  .cardWrapper .faq {
+    height: 100%;
+    width: 17rem;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+  .cardWrapper .faq .questionsContainer .title {
+    text-align: center;
+  }
+  .cardWrapper .faq .questionsContainer details.answer {
+    color: #787887;
+    font-size: 0.65rem;
+    width: 15rem;
+    margin: 1.2em 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */
