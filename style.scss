@@ -105,6 +105,7 @@ $cardWidth: $cardHeight * $ratio;
         margin: 1.2em 0;
 
         summary.question {
+          cursor: pointer;
           margin-bottom: 0.8em;
           position: relative;
           font-size: 0.75rem;
@@ -121,6 +122,10 @@ $cardWidth: $cardHeight * $ratio;
             content: url("./images/icon-arrow-down.svg");
             transform: scale(0.8);
             transform-origin: center;
+          }
+
+          &:hover {
+            color: $soft-red-txt;
           }
         }
       }

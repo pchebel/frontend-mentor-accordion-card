@@ -118,6 +118,7 @@ body {
 }
 
 .cardWrapper .faq .questionsContainer details.answer summary.question {
+  cursor: pointer;
   margin-bottom: 0.8em;
   position: relative;
   font-size: 0.75rem;
@@ -137,6 +138,10 @@ body {
           transform: scale(0.8);
   -webkit-transform-origin: center;
           transform-origin: center;
+}
+
+.cardWrapper .faq .questionsContainer details.answer summary.question:hover {
+  color: #f47c57;
 }
 
 .cardWrapper .faq .questionsContainer details.answer[open] summary.question {
